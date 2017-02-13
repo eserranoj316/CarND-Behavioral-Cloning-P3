@@ -28,7 +28,7 @@ from sklearn.model_selection import train_test_split
 
 new_size_col,new_size_row = 200, 66
 pr_threshold = 1.
-logFiles = "/home/yetski/SDC/CarND-BehavioralCloning/data/driving_log.csv"
+logFiles = "data/driving_log.csv"
 
 
 def augment_brightness_camera_images(image):
@@ -98,7 +98,7 @@ def preprocess_image_file_train(line_data):
     y_steer = line_data['steering'][0] + shift_ang
     
     #ems do path_file
-    image = cv2.imread("/home/yetski/SDC/CarND-BehavioralCloning/data/" + path_file)
+    image = cv2.imread("data/" + path_file)
     image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
     image,y_steer = trans_image(image,y_steer,100)
     image = augment_brightness_camera_images(image)
@@ -219,7 +219,7 @@ if __name__ == "__main__":
 
   model = get_model()
   
-  logFiles = "/home/yetski/SDC/CarND-BehavioralCloning/data/driving_log.csv"
+  logFiles = "data/driving_log.csv"
 
   data = pd.read_csv(logFiles)
   pr_threshold = 1
