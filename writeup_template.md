@@ -27,42 +27,42 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder_small.png "Flipped Image"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
+##Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ###Files Submitted & Code Quality
-
 ####1. Submission includes all required files and can be used to run the simulator in autonomous mode
-
 My project includes the following files:
 * model.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
+* process_image.py containing functions for image augmentation and pre-processing
+* model.h5 containing a trained convolution neural network with all the learned weights
+* model.json saved model
 * writeup_report.md or writeup_report.pdf summarizing the results
 
 ####2. Submssion includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
-python drive.py model.h5
+python drive.py model.json
 ```
-
 ####3. Submssion code is usable and readable
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+The model.py file contains the code for training and saving the convolution neural network. model.py imports utility functions from within process_image.py. Functions are mostly for image augmentations (left/right shift, randomly introducing brightness and  shadow effects, and cropping. model.py shows the pipeline (process_iamge.get_model()) used for training and validating the model, and it contains comments to explain how the code works.
 
 ###Model Architecture and Training Strategy
-
 ####1. An appropriate model arcthiecture has been employed
+The model I used is an implementation of NVIDIA's CNN architecture as specified in [](https://arxiv.org/pdf/1604.07316v1.pdf).
+The first layer performs image normalization using a Keras lambda layer. The first convolutional layer uses 3 filters and 1x1 kernel to do initial feature extractions. The next three convolutional layers uses 24,36,and 48 filters all of which has 2x2 stride and 5x5 kernel and the last two convolutional layers both have 64 filters, 3x3 kernel and 1x1 stride (model.py get_model() method line 28). The model includes "ELU" layers to introduce nonlinearity, for fast learning, and better generalization [Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)](http://arxiv.org/abs/1511.07289). 
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
-
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
 
 ####2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
+The model contains dropout(0.10) layers in order to reduce overfitting (model.py line 28). 
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+
+
+
 
 ####3. Model parameter tuning
 
