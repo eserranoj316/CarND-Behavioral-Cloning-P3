@@ -85,88 +85,50 @@ Initial training:
 I tried to use initial model and fine tune it. The resulting training and validation loss improved and car was able to drive the track continously without going outside the road. [car driving autonomously](https://youtu.be/z3z2mb9RJAE)
 
 Second training:
-0224/20000 [===] - 124s - loss: 0.0988 - val_loss: 0.0637
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0845 - val_loss: 0.0624
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0820 - val_loss: 0.0643
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0817 - val_loss: 0.0700
-Epoch 1/1
-20224/20000 [===] - 124s - loss: 0.0808 - val_loss: 0.0619
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0778 - val_loss: 0.0572
-Epoch 1/1
-20224/20000 [===] - 124s - loss: 0.0766 - val_loss: 0.0595
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0779 - val_loss: 0.0545
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0742 - val_loss: 0.0537
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0716 - val_loss: 0.0512
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0693 - val_loss: 0.0504
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0706 - val_loss: 0.0497
-Epoch 1/1
-20224/20000 [===] - 124s - loss: 0.0669 - val_loss: 0.0517
-Epoch 1/1
-20224/20000 [===] - 120s - loss: 0.0664 - val_loss: 0.0483
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0651 - val_loss: 0.0480
+* 20224/20000  124s - loss: 0.0988 - val_loss: 0.0637
+* 20224/20000  123s - loss: 0.0845 - val_loss: 0.0624
+* 20224/20000  123s - loss: 0.0820 - val_loss: 0.0643
+* 20224/20000  122s - loss: 0.0817 - val_loss: 0.0700
+* 20224/20000  124s - loss: 0.0808 - val_loss: 0.0619
+* 20224/20000  123s - loss: 0.0778 - val_loss: 0.0572
+* 20224/20000  124s - loss: 0.0766 - val_loss: 0.0595
+* 20224/20000  123s - loss: 0.0779 - val_loss: 0.0545
+* 20224/20000  122s - loss: 0.0742 - val_loss: 0.0537
+* 20224/20000  123s - loss: 0.0716 - val_loss: 0.0512
+* 20224/20000  123s - loss: 0.0693 - val_loss: 0.0504
+* 20224/20000  121s - loss: 0.0706 - val_loss: 0.0497
+* 20224/20000  124s - loss: 0.0669 - val_loss: 0.0517
+* 20224/20000  120s - loss: 0.0664 - val_loss: 0.0483
+* 20224/20000  123s - loss: 0.0651 - val_loss: 0.0480
 
 
 I did another model training with batch size of 256, epoch 25, and 20224 samples per epoch and car was able to drive the lane successfully without goind outside the road and no additional fine tuning needed.
 
-20224/20000 [===] - 128s - loss: 0.1335 - val_loss: 0.0841
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0994 - val_loss: 0.0773
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0921 - val_loss: 0.0744
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0944 - val_loss: 0.0774
-Epoch 1/1
-20224/20000 [===] - 119s - loss: 0.0896 - val_loss: 0.0725
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0913 - val_loss: 0.0683
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0848 - val_loss: 0.0667
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0861 - val_loss: 0.0672
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0861 - val_loss: 0.0642
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0831 - val_loss: 0.0635
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0805 - val_loss: 0.0634
-Epoch 1/1
-20224/20000 [===] - 123s - loss: 0.0822 - val_loss: 0.0629
-Epoch 1/1
-20224/20000 [===] - 120s - loss: 0.0798 - val_loss: 0.0674
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0789 - val_loss: 0.0609
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0761 - val_loss: 0.0625
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0751 - val_loss: 0.0590
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0742 - val_loss: 0.0606
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0755 - val_loss: 0.0569
-Epoch 1/1
-20224/20000 [===] - 120s - loss: 0.0709 - val_loss: 0.0600
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0703 - val_loss: 0.0550
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0705 - val_loss: 0.0556
-Epoch 1/1
-20224/20000 [===] - 120s - loss: 0.0664 - val_loss: 0.0557
-Epoch 1/1
-20224/20000 [===] - 122s - loss: 0.0653 - val_loss: 0.0527
-Epoch 1/1
-20224/20000 [===] - 120s - loss: 0.0640 - val_loss: 0.0525
-Epoch 1/1
-20224/20000 [===] - 121s - loss: 0.0641 - val_loss: 0.0531
+* 20224/20000 128s - loss: 0.1335 - val_loss: 0.0841
+* 20224/20000 122s - loss: 0.0994 - val_loss: 0.0773
+* 20224/20000 121s - loss: 0.0921 - val_loss: 0.0744
+* 20224/20000 121s - loss: 0.0944 - val_loss: 0.0774
+* 20224/20000 119s - loss: 0.0896 - val_loss: 0.0725
+* 20224/20000 121s - loss: 0.0913 - val_loss: 0.0683
+* 20224/20000 121s - loss: 0.0848 - val_loss: 0.0667
+* 20224/20000 123s - loss: 0.0861 - val_loss: 0.0672
+* 20224/20000 121s - loss: 0.0861 - val_loss: 0.0642
+* 20224/20000 121s - loss: 0.0831 - val_loss: 0.0635
+* 20224/20000 122s - loss: 0.0805 - val_loss: 0.0634
+* 20224/20000 123s - loss: 0.0822 - val_loss: 0.0629
+* 20224/20000 120s - loss: 0.0798 - val_loss: 0.0674
+* 20224/20000 121s - loss: 0.0789 - val_loss: 0.0609
+* 20224/20000 122s - loss: 0.0761 - val_loss: 0.0625
+* 20224/20000 122s - loss: 0.0751 - val_loss: 0.0590
+* 20224/20000 121s - loss: 0.0742 - val_loss: 0.0606
+* 20224/20000 121s - loss: 0.0755 - val_loss: 0.0569
+* 20224/20000 120s - loss: 0.0709 - val_loss: 0.0600
+* 20224/20000 122s - loss: 0.0703 - val_loss: 0.0550
+* 20224/20000 121s - loss: 0.0705 - val_loss: 0.0556
+* 20224/20000 120s - loss: 0.0664 - val_loss: 0.0557
+* 20224/20000 122s - loss: 0.0653 - val_loss: 0.0527
+* 20224/20000 120s - loss: 0.0640 - val_loss: 0.0525
+* 20224/20000 121s - loss: 0.0641 - val_loss: 0.0531
 
 
 
