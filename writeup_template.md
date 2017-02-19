@@ -8,16 +8,6 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
 ###Files Submitted & Code Quality
 ####1. Submission includes all required files and can be used to run the simulator in autonomous mode
 My project includes the following files:
@@ -26,7 +16,7 @@ My project includes the following files:
 * process_image.py containing functions for image augmentation and pre-processing
 * model.h5 containing a trained convolution neural network with all the learned weights
 * model.json saved model
-* writeup_report.md or writeup_report.pdf summarizing the results
+* writeup_report.md summarizing the results
 
 ####2. Submssion includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -153,10 +143,7 @@ The indexes to the image files were shuffled and split to test(80%) and validati
     - Captured left and right camera images are also used. The steering angle recorded during data collection is based on the center camera position. In order to use the left and right camera image as if they came from the center camera, we add a 0.25 to recorded steering angle and map it to left camera image and subtract 0.25 for right camera image. By using images captured from right and left camera we can simulate the effect of driving on the side  of the road and recovering back to center (process_image.py preprocess_image_file_train()).
     - Cropping is also done to remove the horizon and car's hood which is not really needed by the model in predecting the corresponding steering angle (process_image.py preprocessImage(). After Cropping the image is resized to 66x200 for NVIDIA's expected image input shape.
  
- *Show the image here
- CarND-Behavioral-Cloning-P3/IMG2/centerImage_augmentation.jpg 
-
-![Alt text](/IMG2/centerImage_augmentation.jpg?raw=true "Optional Title")
+![Sample image results after augmentation](/IMG2/centerImage_augmentation.jpg?raw=true "Optional Title")
 
 
 
