@@ -49,7 +49,6 @@ The following data were collected for the training/validation sets
 * 3 laps of driving while staying in middle lane.
 * 2 laps of driving while staying in middle lane in opposite direction.
   The data collected in track 1 is bias towards left turns to balance it we need to collect center lane driving in opposite      direction (counter-clockwise).
-
   
 ###Model Architecture and Training Strategy
 ####1. Solution Design Approach
@@ -72,7 +71,7 @@ Initial training:
 * 20224/20000  123s  loss: 0.0694 - val_loss: 0.0721
 * 20224/20000  126s  loss: 0.0669 - val_loss: 0.0658
 
-I tried to use initial model and fine tune it. The resulting training and validation loss improved and car was able to drive the track continously without going outside the road. [car driving autonomously](https://youtu.be/z3z2mb9RJAE)
+I tried to use initial model and fine tune it. The resulting training and validation loss improved and car was able to drive the track continously without going outside the road. [car driving autonomously training twice in succession 15 epochs each](https://youtu.be/z3z2mb9RJAE)
 
 Second training:
 * 20224/20000  124s - loss: 0.0988 - val_loss: 0.0637
@@ -92,7 +91,7 @@ Second training:
 * 20224/20000  123s - loss: 0.0651 - val_loss: 0.0480
 
 
-I did another model training with batch size of 256, epoch 25, and 20224 samples per epoch and car was able to drive the lane successfully without goind outside the road and no additional fine tuning needed.
+I did another model training with batch size of 256, epoch 25, and 20224 samples per epoch and car was able to drive the lane successfully without goind outside the road and no additional fine tuning needed. [car driving autonomously single training 25 epochs](https://youtu.be/b--krzkN_tw)
 
 * 20224/20000 128s - loss: 0.1335 - val_loss: 0.0841
 * 20224/20000 122s - loss: 0.0994 - val_loss: 0.0773
@@ -136,14 +135,15 @@ Here is a visualization of the architecture (note: visualizing the architecture 
 ####3. Creation of the Training Set & Training Process
 The indexes to the image files were shuffled and split to test(80%) and validation(20%) sets. A one time data generation with augmentation on the validation set is done and used in the entire training activity. Batch training set is generated on-the-fly using the augmentation listed below via keras data generator. 
 
- * List of augmentation used
+ * List of augmentations used
     - shifting image to the right and left to mimic the effect of car driving at different position on the road and adding 0.004 steering angle units per pixel shift to the right while subtracting 0.004 steering angle units per pixel shift to the left. Shifting vertically is also done to simulate car driving up or down the slope (process_image.py trans_image())
     - Brightness augmentation is done to simulate different time of day. Brightness level is chosen randomly (process_image.py augment_brightness_camera_images())
     - Image flipping is also done to for more driving data for better generalization of the model. Steering angle sign is reversed during image flipping.
     - Captured left and right camera images are also used. The steering angle recorded during data collection is based on the center camera position. In order to use the left and right camera image as if they came from the center camera, we add a 0.25 to recorded steering angle and map it to left camera image and subtract 0.25 for right camera image. By using images captured from right and left camera we can simulate the effect of driving on the side  of the road and recovering back to center (process_image.py preprocess_image_file_train()).
     - Cropping is also done to remove the horizon and car's hood which is not really needed by the model in predecting the corresponding steering angle (process_image.py preprocessImage(). After Cropping the image is resized to 66x200 for NVIDIA's expected image input shape.
  
-![Sample image results after augmentation](/IMG2/centerImage_augmentation.jpg?raw=true "Optional Title")
+ #### Sample images after augmentation
+![Alt txt](/IMG2/centerImage_augmentation.jpg?raw=true)
 
 
 
