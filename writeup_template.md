@@ -37,7 +37,7 @@ The first layer performs image normalization using a Keras lambda layer. The fir
 The model contains dropout(0.10) layers in order to reduce overfitting (model.py get_model). 
 The data sets were shuffled and splitted into test(80%) and validation(20%)  sets.
 The model was trained on different data sets by using on-the-fly image augmentation to create more driving scenes/scenarios.
-The augmentation routines are written and inspired by [Vivek Yadav's post] (https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9#.3iotk6hco). Validation data sets were augmented and pre-processed one time and used in the entire training activity. 
+The augmentation routines were written using ideas and information from [Vivek Yadav's post] (https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9#.3iotk6hco). Validation data sets were augmented and pre-processed one time and used in the entire training activity. 
 Model was tested in the simulator and vehicle was able to stay on the track [car driving autonomously](https://youtu.be/z3z2mb9RJAE)
 
 ####3. Model parameter tuning
@@ -124,7 +124,7 @@ I did another model training with batch size of 256, epoch 25, and 20224 samples
 
 The final model architecture (model.py get_model()) is the NVIDIA's CNN architecture as specified in [NVIDIA's End to End Learning for Self-Driving Cars](https://arxiv.org/pdf/1604.07316v1.pdf) with 0.10 dropout and ELU activation.
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+### Neural Network Implemented 
 
 ![Neural Network Implemented](/IMG2/NeuralNet.jpg?raw=true)  
 
