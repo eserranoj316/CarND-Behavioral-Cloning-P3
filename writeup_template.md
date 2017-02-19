@@ -66,21 +66,21 @@ The following data were collected for the training/validation sets
 Initially I trained the model using batch size of 256, epoch 15, and 20224 samples per epoch and noticed that the training and validation loss still has some room to converge to a minimum. The initial model had the car drive inside the lane for a few seconds then eventually send the car off-road. 
 Initial training:
 
-20224/20000  127s  loss: 0.1071 - val_loss: 0.0936
-20224/20000  122s  loss: 0.0883 - val_loss: 0.0894
-20224/20000  125s  loss: 0.0857 - val_loss: 0.0871
-20224/20000  124s  loss: 0.0844 - val_loss: 0.0857
-20224/20000  123s  loss: 0.0824 - val_loss: 0.0863
-20224/20000  124s  loss: 0.0830 - val_loss: 0.0826
-20224/20000  124s  loss: 0.0788 - val_loss: 0.0806
-20224/20000  124s  loss: 0.0792 - val_loss: 0.0791
-20224/20000  124s  loss: 0.0775 - val_loss: 0.0777
-20224/20000  124s  loss: 0.0749 - val_loss: 0.0747
-20224/20000  125s  loss: 0.0732 - val_loss: 0.0725
-20224/20000  124s  loss: 0.0705 - val_loss: 0.0729
-20224/20000  124s  loss: 0.0706 - val_loss: 0.0705
-20224/20000  123s  loss: 0.0694 - val_loss: 0.0721
-20224/20000  126s  loss: 0.0669 - val_loss: 0.0658
+* 20224/20000  127s  loss: 0.1071 - val_loss: 0.0936
+* 20224/20000  122s  loss: 0.0883 - val_loss: 0.0894
+* 20224/20000  125s  loss: 0.0857 - val_loss: 0.0871
+* 20224/20000  124s  loss: 0.0844 - val_loss: 0.0857
+* 20224/20000  123s  loss: 0.0824 - val_loss: 0.0863
+* 20224/20000  124s  loss: 0.0830 - val_loss: 0.0826
+* 20224/20000  124s  loss: 0.0788 - val_loss: 0.0806
+* 20224/20000  124s  loss: 0.0792 - val_loss: 0.0791
+* 20224/20000  124s  loss: 0.0775 - val_loss: 0.0777
+* 20224/20000  124s  loss: 0.0749 - val_loss: 0.0747
+* 20224/20000  125s  loss: 0.0732 - val_loss: 0.0725
+* 20224/20000  124s  loss: 0.0705 - val_loss: 0.0729
+* 20224/20000  124s  loss: 0.0706 - val_loss: 0.0705
+* 20224/20000  123s  loss: 0.0694 - val_loss: 0.0721
+* 20224/20000  126s  loss: 0.0669 - val_loss: 0.0658
 
 I tried to use initial model and fine tune it. The resulting training and validation loss improved and car was able to drive the track continously without going outside the road. [car driving autonomously](https://youtu.be/z3z2mb9RJAE)
 
