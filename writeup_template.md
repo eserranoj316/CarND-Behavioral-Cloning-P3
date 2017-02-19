@@ -154,7 +154,9 @@ The indexes to the image files were shuffled and split to test(80%) and validati
     - Cropping is also done to remove the horizon and car's hood which is not really needed by the model in predecting the corresponding steering angle (process_image.py preprocessImage(). After Cropping the image is resized to 66x200 for NVIDIA's expected image input shape.
  
  *Show the image here
+ CarND-Behavioral-Cloning-P3/IMG2/centerImage_augmentation.jpg 
 
+![Alt text](/IMG2/centerImage_augmentation.jpg?raw=true "Optional Title")
 
 
 
