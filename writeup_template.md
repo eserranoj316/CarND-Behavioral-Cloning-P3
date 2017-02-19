@@ -1,4 +1,3 @@
-#**Behavioral Cloning** 
 **Behavrioal Cloning Project**
 
 The goals / steps of this project are the following:
@@ -127,8 +126,7 @@ The final model architecture (model.py get_model()) is the NVIDIA's CNN architec
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-#### ems show NVIDIAs image
-
+![Neural Network Implemented](/IMG2/NeuralNet.jpg?raw=true)  
 
 
 
