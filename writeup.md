@@ -7,8 +7,8 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-###Files Submitted & Code Quality
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+### Files Submitted & Code Quality
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 My project includes the following files:
 * model.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
@@ -17,40 +17,40 @@ My project includes the following files:
 * model.json saved model
 * writeup_report.md summarizing the results
 
-####2. Submssion includes functional code
+#### 2. Submssion includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
 python drive.py model.json
 ```
-####3. Submssion code is usable and readable
+#### 3. Submssion code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. model.py imports utility functions from within process_image.py. Methods in process_image.py are mostly for image augmentations (left/right shift, randomly introducing brightness and  image flipping, and cropping) to randomly introduce various driving scenes/scenarios. model.py shows the pipeline (get_model()) used for training and validating the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model arcthiecture has been employed
+#### 1. An appropriate model arcthiecture has been employed
 The model I used is an implementation of NVIDIA's CNN architecture as specified in [NVIDIA's End to End Learning for Self-Driving Cars](https://arxiv.org/pdf/1604.07316v1.pdf).
 The first layer performs image normalization using a Keras lambda layer. The first convolutional layer uses 3 filters and 1x1 kernel to do initial feature extractions. The next three convolutional layers uses 24,36,and 48 filters all of which have 2x2 stride and 5x5 kernel. The last two convolutional layers both have 64 filters, 3x3 kernel and 1x1 stride (model.py get_model() method line 28). The model includes "ELU" layers to introduce nonlinearity, for fast learning, and better generalization [Fast and Accurate Deep Network Learning by Exponential Linear Units (ELUs)](http://arxiv.org/abs/1511.07289). 
 
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 The model contains dropout(0.10) layers in order to reduce overfitting (model.py get_model). 
 The data sets were shuffled and splitted into test(80%) and validation(20%)  sets.
 The model was trained on different data sets by using on-the-fly image augmentation to create more driving scenes/scenarios.
 The augmentation routines were written using ideas and information from [Vivek Yadav's post] (https://chatbotslife.com/using-augmentation-to-mimic-human-driving-496b569760a9#.3iotk6hco). Validation data sets were augmented and pre-processed one time and used in the entire training activity. 
 Model was tested in the simulator and vehicle was able to stay on the track [car driving autonomously](https://youtu.be/z3z2mb9RJAE)
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 The model used an adam optimizer. 
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 The following data were collected for the training/validation sets 
 * 3 laps of driving while staying in middle lane.
 * 2 laps of driving while staying in middle lane in opposite direction.
   The data collected in track 1 is bias towards left turns to balance it we need to collect center lane driving in opposite      direction (counter-clockwise).
   
-###Model Architecture and Training Strategy
-####1. Solution Design Approach
+### Model Architecture and Training Strategy
+#### 1. Solution Design Approach
 Initially I trained the model using batch size of 256, epoch 15, and 20224 samples per epoch and noticed that the training and validation loss still has some room to converge to a minimum. The initial model had the car drive inside the lane for a few seconds then eventually send the car off-road. 
 Initial training:
 
@@ -130,7 +130,7 @@ The final model architecture (model.py get_model()) is the NVIDIA's CNN architec
 
 
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 The indexes to the image files were shuffled and split to test(80%) and validation(20%) sets. A one time data generation with augmentation on the validation set is done and used in the entire training activity. Batch training set is generated on-the-fly using the augmentation listed below via keras data generator. 
 
  * List of augmentations used
